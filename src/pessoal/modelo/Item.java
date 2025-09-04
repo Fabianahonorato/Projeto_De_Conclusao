@@ -40,5 +40,5 @@ public abstract class Item {
       @Override
       public String toString() {
       return "Título: " + titulo + ", Autor/Artista: " + autorArtista + ", Categoria: " + categoria.getNome();
-      }
+  }
 }
