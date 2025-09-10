@@ -8,11 +8,12 @@ import pessoal.repositorio.ItemRepositoryImpl;
 import java.util.List;
 
 public class BibliotecaService {
+	
 	private ItemRepository itemRepository;
 	
-	public BibliotecaService()
-	}
-	  this.itemRepository = new ItemRepositoryImpl();
+	public BibliotecaService() {
+		  this.itemRepository = new ItemRepositoryImpl();
+
 	    
 }
 	
@@ -33,7 +34,7 @@ public class BibliotecaService {
        itemRepository.adicionarItem(item);
        System.out.println( "Item adicionado com sucesso!");
        
-      
+    }
       public List<Item> listarTodosItens(){
     	  return itemRepository.listarTodosItens();
       }

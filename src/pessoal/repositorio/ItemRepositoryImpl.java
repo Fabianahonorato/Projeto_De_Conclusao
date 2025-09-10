@@ -4,12 +4,13 @@ import pessoal.modelo.Item;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class ItemRepositoryImpl implements ItemRepository {
+	
 	private List<Item> itens;
 
-    public ItemReposityImpl() {
+    public ItemRepositoryImpl() {
     	this.itens = new ArrayList<>();
     	
     }
@@ -25,9 +26,18 @@ public class ItemRepositoryImpl implements ItemRepository {
     	
     }
     
+    @Override 
+    public List<Item> listarItensPorCategoria(String categoria) {
+    	return this.itens.stream()
+    			.filter(item -> item.getCategoria().getNome().equalsIgnoreCase(categoria))
+                .collect(Collectors.toList());
+    }
     @Override
     public boolean removerItem(String titulo) {
     	return this.itens.removeIf(item -> item.getTitulo(). equalsIgnoreCase(titulo));
     }
+
 }
+
+	
 
